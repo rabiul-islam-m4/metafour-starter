@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.metafour.starter.exception.MetafourStarterException;
+import com.metafour.starter.model.Person;
 import com.metafour.starter.model.Student;
 import com.metafour.starter.service.DestinationService;
 import com.metafour.starter.service.StudentService;
@@ -30,7 +31,18 @@ public class StudentController {
 	@Autowired StudentService studentService;
 	@Autowired DestinationService destinationService;
 	
-	@PostConstruct
+	
+	{
+		SKILL.put("JAV", "Java");
+		SKILL.put("PHP", "PHP");
+		SKILL.put("JCP", "JavaScript");
+		SKILL.put("C", "C");
+		SKILL.put("PYT", "Python");
+		SKILL.put("SQL", "SQL");
+		SKILL.put("ORA", "Oracle");
+		
+	}
+	/*@PostConstruct
 	private void init() {
 		SKILL.put("JAV", "Java");
 		SKILL.put("PHP", "PHP");
@@ -39,9 +51,9 @@ public class StudentController {
 		SKILL.put("PYT", "Python");
 		SKILL.put("SQL", "SQL");
 		SKILL.put("ORA", "Oracle");
-	}
+	}*/
 	
-	@RequestMapping
+	@RequestMapping(method=RequestMethod.GET)
 	public String newScreen(final ModelMap model) throws MetafourStarterException {
 		return updateScreen(null, model);
 	}

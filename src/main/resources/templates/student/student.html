@@ -26,7 +26,7 @@
 						<li class="nodisplay"><a class="viewmode updatebutton addbutton submit" id="headerconfirmbutton" th:text="#{action.save}">Save</a></li>
 						<li class="nodisplay"><a class="viewmode updatebutton" id="headercancelbutton" th:text="#{action.cancel}">Cancel</a></li>
 					</ul>
-					<form id="searchform" class="navbar-search pull-right" method="get" th:action="@{'/student/error'}">
+					<form id="searchform" class="navbar-search pull-right" method="get" th:action="@{'/student/'}">
 						<input id="datasearchfield" class="typeahead search-query" type="text" placeholder="Search" data-provide="typeahead" th:attr="data-search-url=@{'/search/student/'}" /> <input
 							class="typeahead-val" type="hidden" name=" " value="" /> <input
 							class="typeahead-desc" type="hidden" value="" />

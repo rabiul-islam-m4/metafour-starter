@@ -21,7 +21,7 @@ public class StudentService {
 	}
 	
 	public void updateStudent(Student student) throws MetafourStarterException {
-		List<Student> ssts = students.stream().filter(s -> s.getId().equals(student.getId())).collect(Collectors.toList());
+		List<Student> ssts = students.stream().filter(r -> r.getId().equals(student.getId())).collect(Collectors.toList());
 		if (ssts.isEmpty())
 			throw new MetafourStarterException("No Student found with ID '" + student.getId() + "' for update!");
 		students.remove(ssts.get(0));
@@ -29,7 +29,7 @@ public class StudentService {
 	}
 
 	public void deleteStudent(Student student) throws MetafourStarterException {
-		List<Student> ssts = students.stream().filter(s -> s.getId().equals(student.getId())).collect(Collectors.toList());
+		List<Student> ssts = students.stream().filter(r -> r.getId().equals(student.getId())).collect(Collectors.toList());
 		if (ssts.isEmpty())
 			throw new MetafourStarterException("No Student found with ID '" + student.getId() + "' for delete!");
 		students.remove(ssts.get(0));
@@ -40,7 +40,7 @@ public class StudentService {
 	}
 
 	public Student getById(String id) throws MetafourStarterException {
-		List<Student> ssts = students.stream().filter(s -> s.getId().equals(id)).collect(Collectors.toList());
+		List<Student> ssts = students.stream().filter(r -> r.getId().equals(id)).collect(Collectors.toList());
 		if (ssts.size() != 1)
 			return null;
 		return ssts.get(0);
