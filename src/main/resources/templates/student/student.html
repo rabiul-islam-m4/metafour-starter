@@ -5,7 +5,7 @@
 <title th:text="#{student.title}">Student</title>
 <span th:substituteby="commons :: common-css"></span>
 </head>
-<body th:with="isNew=${#strings.isEmpty(student.id)}" >
+<body th:with="isNew=${#strings.isEmpty(student.id)}">
 	<div id="headerbar" class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -42,15 +42,15 @@
 					<li class="">
 						<a href="#personaldetails">Personal Details</a>
 					</li>
-           			<li class="">
-                		<a href="#address1">Address</a>
-            		</li>
-            		<li class="">
-                		<a href="#aqualification">Academic qualifications</a>
-            		</li>
-            		<li class="">
-                		<a href="#skill">Skill</a>
-            		</li>
+					<li class="">
+						<a href="#address1">Address</a>
+					</li>
+					<li class="">
+						<a href="#aqualification">Academic qualifications</a>
+					</li>
+					<li class="">
+						<a href="#skill">Skill</a>
+					</li>
 				</ul>
 			</div>
 		</header> 
@@ -60,13 +60,13 @@
 				<h1>
 					<small><i class="icon-chevron-down"></i>Personal Details</small>
 				</h1>
-			</div> 
+			</div>
 				<div class="row anything">
 					<div class="span6">
 						<fieldset>
-							  <div class="control-group" th:if="*{id != null }">
-								<label for="id"  class="control-label" th:text="#{student.id.label}">Id</label> 
-								 <div class="controls">								
+							<div class="control-group" th:if="*{id != null}">
+								<label for="id"  class="control-label" th:text="#{student.id.label}">Id</label>
+								 <div class="controls">
 									<input type="text" id="id" th:field="*{id}" data-required="required" class="include" readonly="readonly" data-maxlength="50"/>
 								</div> 
 							</div> 
@@ -83,27 +83,26 @@
 								</div>
 							</div>
 							<div class="control-group">
-    							<label for="dob" class="control-label" th:text="#{student.dob.label}">Date Of birth</label>
-    							<div class="controls">
-        							<div class="input-append">
-            							<input id="dob" class="input-small include con-datepicker" data-required="required" th:field="*{dateOfBirth}" type="text"  name="
-            							datepicker"/><span class="add-on"><i class="icon-calendar"></i></span>
-            							
-        							</div>
-    							</div>
+								<label for="dob" class="control-label" th:text="#{student.dob.label}">Date Of birth</label>
+								<div class="controls">
+									<div class="input-append">
+										<input id="dob" class="input-small include con-datepicker" data-required="required" th:field="*{dateOfBirth}" type="text"  name="
+										datepicker"/><span class="add-on"><i class="icon-calendar"></i></span>							
+									</div>
+								</div>
 							</div>
 							<div class="control-group">
-						    <label for="groupofradios" class="control-label"  th:text="#{student.gender.label}">Gender</label>
-						 		<div class="controls">
-										<label class="radio inline">
+							<label for="groupofradios" class="control-label"  th:text="#{student.gender.label}">Gender</label>
+								<div class="controls">
+									<label class="radio inline">
 										<input type="radio" th:field="*{gender}" value="Male" id="groupofradios1" data-required="required" name="gender"  class="include"/> 
 										 Male
-									    </label>									 
-										<label class="radio inline">
-										<input type="radio" th:field="*{gender}" value="Female" id="groupofradios2" name="gender"  class="include"/> 
+									</label>
+									<label class="radio inline">
+										<input type="radio" th:field="*{gender}" value="Female" id="groupofradios2" name="gender"  class="include"/>
 										 Female
-									     </label>
-        						</div>					
+									</label>
+								</div>					
 							</div>
 							<div class="control-group">
 								<label  for="solocheck1" class="control-label"  th:text="#{student.maritalstatus.label}">Marital status</label>
@@ -124,13 +123,13 @@
 							<div class="control-group">
 								<label for="nid" class="control-label" th:text="#{student.nid.label}"> National id</label>
 								<div class="controls">
-									<input id="nid"  th:field="*{nid}" type="text" data-maxlength="50" class="include" placeholder=" National id" />
+									<input id="nid"  th:field="*{nid}" type="text" data-maxlength="50" class="include" placeholder=" National id"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="email" class="control-label" th:text="#{student.email.label}">Email</label>
 								<div class="controls">
-									<input id="email"  th:field="*{email}" type="text" data-maxlength="50" class="include" placeholder=" aaa@gmail.com" />
+									<input id="email"  th:field="*{email}" type="text" data-maxlength="50" class="include" placeholder=" aaa@gmail.com" data-valid="email"/>
 								</div>
 							</div>
 						</fieldset>
@@ -139,17 +138,17 @@
 			</section>
 			<section id="address1">
 				<div class="page-header sectionbartoggle" tabindex="0">
-       		 		<h1>
-           				 <small><i class="icon-chevron-down"></i>Address</small>
-        			</h1>
-    			</div> 
+					<h1>
+						<small><i class="icon-chevron-down"></i>Address</small>
+					</h1>
+				</div> 
 				<div class="row anything">
 					<div class="span6">
 						<fieldset>
 							<div class="span6 offset1">
 								<h3>Present Address </h3>
 							</div>
-							<br/><br/>		
+							<br/><br/>
 							<div class="control-group">
 								<label for="districts" class="control-label" th:text="#{student.dist.label}">District</label>
 								<div class="controls">
@@ -161,35 +160,35 @@
 										<input class="typeahead-desc" type="hidden" value="" />
 									</div>
 								</div>
-							</div>				
+							</div>
 							<div class="control-group">
 								<label for="thana" class="control-label" th:text="#{student.thana.label}">Thana</label>
 								<div class="controls">
-									<input id="thana"  th:field="*{psthana}" type="text" data-maxlength="50" class="include" placeholder="Thana" />
+									<input id="thana"  th:field="*{psthana}" type="text" data-maxlength="50" class="include" placeholder="Thana"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="post" class="control-label" th:text="#{student.post.label}">Post</label>
 								<div class="controls">
-									<input id="post" th:field="*{pspost}" type="text" data-maxlength="50" class="include" placeholder="Post" />
+									<input id="post" th:field="*{pspost}" type="text" data-maxlength="50" class="include" placeholder="Post"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="vill" class="control-label" th:text="#{student.vill.label}">Village</label>
 								<div class="controls">
-									<input id="vill"  th:field="*{psvill}" type="text" data-maxlength="50" class="include" placeholder="Village" />
+									<input id="vill"  th:field="*{psvill}" type="text" data-maxlength="50" class="include" placeholder="Village"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="roadno" class="control-label" th:text="#{student.roadno.label}">Road no</label>
 								<div class="controls">
-									<input id="roadno"  th:field="*{psraod}" type="text" data-maxlength="50" class="include" placeholder="Road no" />
+									<input id="roadno"  th:field="*{psraod}" type="text" data-maxlength="50" class="include" placeholder="Road no"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="hoseno" class="control-label" th:text="#{student.hoseno.label}">House no</label>
 								<div class="controls">
-									<input id="hoseno" th:field="*{pshoseNo}" type="text" data-maxlength="50" class="include" placeholder="House no" />
+									<input id="hoseno" th:field="*{pshoseNo}" type="text" data-maxlength="50" class="include" placeholder="House no"/>
 								</div>
 							</div>
 						</fieldset>
@@ -200,7 +199,7 @@
 								<h3>Permanent Address </h3>
 							</div>
 							<br/><br/>
-						    <div class="control-group">
+							<div class="control-group">
 								<label for="districts" class="control-label" th:text="#{student.dist.label}">District</label>
 								<div class="controls">
 									<div class="input-append">
@@ -215,31 +214,31 @@
 							<div class="control-group">
 								<label for="thana" class="control-label" th:text="#{student.thana.label}">Thana</label>
 								<div class="controls">
-									<input id="thana" th:field="*{thana}" type="text" data-maxlength="50" class="include" placeholder="Thana" />
+									<input id="thana" th:field="*{thana}" type="text" data-maxlength="50" class="include" placeholder="Thana"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="post" class="control-label" th:text="#{student.post.label}">Post</label>
 								<div class="controls">
-									<input id="post" th:field="*{post}" type="text" data-maxlength="50" class="include" placeholder="Post" />
+									<input id="post" th:field="*{post}" type="text" data-maxlength="50" class="include" placeholder="Post"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="vill" class="control-label" th:text="#{student.vill.label}">Village</label>
 								<div class="controls">
-									<input id="vill"  th:field="*{vill}" type="text" data-maxlength="50" class="include" placeholder="Village" />
+									<input id="vill" th:field="*{vill}" type="text" data-maxlength="50" class="include" placeholder="Village"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="roadno" class="control-label" th:text="#{student.roadno.label}">Road no</label>
 								<div class="controls">
-									<input id="roadno"  th:field="*{raod}" type="text" data-maxlength="50" class="include" placeholder="Road no" />
+									<input id="roadno" th:field="*{raod}" type="text" data-maxlength="50" class="include" placeholder="Road no"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="hoseno" class="control-label" th:text="#{student.hoseno.label}">House no</label>
 								<div class="controls">
-									<input id="hoseno" th:field="*{hoseNo}" type="text" data-maxlength="50" class="include" placeholder="House no" />
+									<input id="hoseno" th:field="*{hoseNo}" type="text" data-maxlength="50" class="include" placeholder="House no"/>
 								</div>
 							</div>
 						</fieldset>
@@ -248,10 +247,10 @@
 			</section>
 			<section id="aqualification">
 				<div class="page-header sectionbartoggle" tabindex="0">
-       		 		<h1>
-           				 <small><i class="icon-chevron-down"></i>Academic qualifications</small>
-        			</h1>
-    			</div> 
+					<h1>
+						<small><i class="icon-chevron-down"></i>Academic qualifications</small>
+					</h1>
+				</div> 
 				<div class="row anything ">
 					<div class="span6">
 						<fieldset>
@@ -263,11 +262,10 @@
 									</select>
 								</div>
 							</div>
-						
 							<div class="control-group">
 								<label for="institute" class="control-label" th:text="#{student.institute.label}">Institute</label>
 								<div class="controls">
-									<input id="institute" th:field="*{institute}" type="text" data-maxlength="50" class="include" placeholder="Institute" />
+									<input id="institute" th:field="*{institute}" type="text" data-maxlength="50" class="include" placeholder="Institute"/>
 								</div>
 							</div>
 							<div class="control-group">
@@ -277,8 +275,8 @@
 										<input class="typeahead include" id="subjectsearch" type="text" autocomplete="off" placeholder="Subject" data-search-url="/search/subjects/"
 											th:attr="data-search-url=@{'/search/subject/'}" /><span
 											class="add-on"><i class="icon-search"></i></span> <input
-											class="typeahead-val" type="hidden" th:field="*{subject}" />
-										<input class="typeahead-desc" type="hidden" value="" />
+											class="typeahead-val" type="hidden" th:field="*{subject}"/>
+										<input class="typeahead-desc" type="hidden" value=""/>
 									</div>
 								</div>
 							</div>	
@@ -289,19 +287,19 @@
 							<div class="control-group">
 								<label for="result" class="control-label" th:text="#{student.result.label}">Result</label>
 								<div class="controls">
-									<input id="result"  th:field="*{result}" type="text" data-maxlength="50" class="include" placeholder="Result" />
+									<input id="result" th:field="*{result}" type="text" data-maxlength="50" class="include" placeholder="Result"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="pyear" class="control-label" th:text="#{student.passingyear.label}">Passing year</label>
 								<div class="controls">
-									<input id="pyear" th:field="*{passingYear}" type="text" data-maxlength="50" class="include" placeholder="Passing year" />
+									<input id="pyear" th:field="*{passingYear}" type="text" data-maxlength="50" class="include" placeholder="Passing year"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label for="bduni" class="control-label" th:text="#{student.boaruni.label}">Board/University</label>
 								<div class="controls">
-									<input id="bduni"  th:field="*{boardOrUni}" type="text" data-maxlength="50" class="include" placeholder=" Board/University" />
+									<input id="bduni" th:field="*{boardOrUni}" type="text" data-maxlength="50" class="include" placeholder=" Board/University"/>
 								</div>
 							</div>
 						</fieldset>
@@ -310,10 +308,10 @@
 			</section>
 			<section id="skill">
 				<div class="page-header sectionbartoggle" tabindex="0">
-       		 		<h1>
-           				 <small><i class="icon-chevron-down"></i>Skill</small>
-        			</h1>
-    			</div> 
+					<h1>
+						<small><i class="icon-chevron-down"></i>Skill</small>
+					</h1>
+				</div>
 				<div class="row anything ">
 					<div class="span6">
 						<fieldset>
@@ -327,9 +325,8 @@
 							</div>
 						</fieldset>
 					</div>
-						<div class="span6">
+					<div class="span6">
 						<fieldset>
-						
 						</fieldset>
 					</div>
 				</div>

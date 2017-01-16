@@ -3,12 +3,8 @@ package com.metafour.starter.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import javax.annotation.PostConstruct;
-
 import org.springframework.stereotype.Service;
-
-import com.metafour.starter.model.Destination;
 import com.metafour.starter.model.Subject;
 
 /**

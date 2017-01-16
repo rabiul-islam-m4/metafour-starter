@@ -3,7 +3,6 @@ package com.metafour.starter.controller;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
@@ -16,9 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.metafour.starter.exception.MetafourStarterException;
-import com.metafour.starter.model.Person;
 import com.metafour.starter.model.Student;
 import com.metafour.starter.service.DestinationService;
 import com.metafour.starter.service.StudentService;
@@ -31,18 +28,7 @@ public class StudentController {
 	@Autowired StudentService studentService;
 	@Autowired DestinationService destinationService;
 	
-	
-	{
-		SKILL.put("JAV", "Java");
-		SKILL.put("PHP", "PHP");
-		SKILL.put("JCP", "JavaScript");
-		SKILL.put("C", "C");
-		SKILL.put("PYT", "Python");
-		SKILL.put("SQL", "SQL");
-		SKILL.put("ORA", "Oracle");
-		
-	}
-	/*@PostConstruct
+	@PostConstruct
 	private void init() {
 		SKILL.put("JAV", "Java");
 		SKILL.put("PHP", "PHP");
@@ -51,7 +37,7 @@ public class StudentController {
 		SKILL.put("PYT", "Python");
 		SKILL.put("SQL", "SQL");
 		SKILL.put("ORA", "Oracle");
-	}*/
+	}
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String newScreen(final ModelMap model) throws MetafourStarterException {
@@ -60,9 +46,9 @@ public class StudentController {
 
 	@RequestMapping("/{id}")
 	public String updateScreen(@PathVariable String id, final ModelMap model) throws MetafourStarterException {
-		model.addAttribute("student", id == null ? new Student() : studentService.getById(id));
-	    model.addAttribute("elbels", Arrays.asList("SSC", "HSC", "Graduation", "Post Graduation"));
-	    model.addAttribute("languages", SKILL);
+		model.addAttribute("student", id == null ? new Student() : studentService.getById(id));//poblm
+		model.addAttribute("elbels", Arrays.asList("SSC", "HSC", "Graduation", "Post Graduation"));
+		model.addAttribute("languages", SKILL);
 		return "student/student";
 	}
 	
